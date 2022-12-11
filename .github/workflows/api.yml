@@ -1,0 +1,29 @@
+name: "API"
+
+on:
+  schedule:
+    - cron:  '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Build"
+    steps:
+      - name: "GitHub API"
+        uses: ghastore/api-github-org@main
+        with:
+          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
+          git_user: "${{ secrets.BOT_GITHUB_NAME }}"
+          git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
+          git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          api_owner: "pkgstore"
+          api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+      - name: "Packagist API"
+        uses: ghastore/api-packagist@main
+        with:
+          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
+          git_user: "${{ secrets.BOT_GITHUB_NAME }}"
+          git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
+          git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          api_vendor: "pkgstore"
