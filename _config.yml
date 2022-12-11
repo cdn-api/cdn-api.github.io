@@ -1,0 +1,9 @@
+title: "CDN API"
+description: ""
+
+include: ["_*.json"]
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
