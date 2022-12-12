@@ -11,7 +11,7 @@ jobs:
     name: "Build"
     steps:
       - name: "GitHub API ORG"
-        uses: ghastore/api-github-org@main
+        uses: ghastore/api-github@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
           git_user: "${{ secrets.BOT_GITHUB_NAME }}"
@@ -21,7 +21,7 @@ jobs:
           api_owner: "pkgstore"
           api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
       - name: "GitHub API USERS"
-        uses: ghastore/api-github-org@main
+        uses: ghastore/api-github@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
           git_user: "${{ secrets.BOT_GITHUB_NAME }}"
