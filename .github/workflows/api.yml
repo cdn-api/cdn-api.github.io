@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: "Build"
     steps:
-      - name: "GitHub API"
+      - name: "GitHub API ORG"
         uses: ghastore/api-github-org@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
@@ -19,6 +19,16 @@ jobs:
           git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
           api_type: "orgs"
           api_owner: "pkgstore"
+          api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+      - name: "GitHub API USERS"
+        uses: ghastore/api-github-org@main
+        with:
+          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
+          git_user: "${{ secrets.BOT_GITHUB_NAME }}"
+          git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
+          git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          api_type: "users"
+          api_owner: "KitsuneSolar"
           api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
       - name: "Packagist API"
         uses: ghastore/api-packagist@main
