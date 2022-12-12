@@ -17,6 +17,7 @@ jobs:
           git_user: "${{ secrets.BOT_GITHUB_NAME }}"
           git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
           git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          api_type: "orgs"
           api_owner: "pkgstore"
           api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
       - name: "Packagist API"
