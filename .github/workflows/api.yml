@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  fetch:
     runs-on: ubuntu-latest
-    name: "Build"
+    name: "Fetch"
     steps:
-      - name: "GitHub API ORG"
+      - name: "GitHub API: pkgstore"
         uses: ghastore/api-github@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
@@ -20,7 +20,7 @@ jobs:
           api_type: "orgs"
           api_owner: "pkgstore"
           api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
-      - name: "GitHub API USERS"
+      - name: "GitHub API: KitsuneSolar"
         uses: ghastore/api-github@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
