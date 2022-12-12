@@ -30,7 +30,7 @@ jobs:
           api_type: "users"
           api_owner: "KitsuneSolar"
           api_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
-      - name: "Packagist API"
+      - name: "Packagist API: pkgstore"
         uses: ghastore/api-packagist@main
         with:
           git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
