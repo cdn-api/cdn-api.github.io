@@ -38,3 +38,4 @@ jobs:
           git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
           git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
           api_vendor: "pkgstore"
+          bot_info: "Email: unit22bot@gmail.com"
