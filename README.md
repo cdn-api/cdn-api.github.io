@@ -1,1 +1,1 @@
-# cdn-api.github.io
+# CDN API
