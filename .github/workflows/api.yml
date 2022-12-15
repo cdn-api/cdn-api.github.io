@@ -39,3 +39,14 @@ jobs:
           git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
           api_vendor: "pkgstore"
           bot_info: "Email: unit22bot@gmail.com"
+      - name: "SUSE OBS API: unixstore"
+        uses: ghastore/api-obs@main
+        with:
+          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
+          git_user: "${{ secrets.BOT_GITHUB_NAME }}"
+          git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
+          git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          api_project: "home:unixstore:debian"
+          api_user: "${{ secrets.OBS_USER }}"
+          api_password: "${{ secrets.OBS_PASSWORD }}"
+          bot_info: "Email: unit22bot@gmail.com"
