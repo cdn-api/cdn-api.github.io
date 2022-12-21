@@ -1,4 +1,4 @@
-name: "API"
+name: 'API'
 
 on:
   schedule:
@@ -8,45 +8,45 @@ on:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    name: "Fetch"
+    name: 'Fetch'
     steps:
-      - name: "GitHub API: pkgstore"
+      - name: 'GitHub API: pkgstore'
         uses: ghastore/api-github@main
         with:
-          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
-          git_user: "${{ secrets.BOT_API_PROXY_NAME }}"
-          git_email: "${{ secrets.BOT_API_PROXY_EMAIL }}"
-          git_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-          api_type: "orgs"
-          api_owner: "pkgstore"
-          api_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-      - name: "GitHub API: KitsuneSolar"
+          git_repo: '${{ github.server_url }}/${{ github.repository }}.git'
+          git_user: '${{ secrets.BOT_API_NAME }}'
+          git_email: '${{ secrets.BOT_API_EMAIL }}'
+          git_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+          api_type: 'orgs'
+          api_owner: 'pkgstore'
+          api_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+      - name: 'GitHub API: KitsuneSolar'
         uses: ghastore/api-github@main
         with:
-          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
-          git_user: "${{ secrets.BOT_API_PROXY_NAME }}"
-          git_email: "${{ secrets.BOT_API_PROXY_EMAIL }}"
-          git_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-          api_type: "users"
-          api_owner: "KitsuneSolar"
-          api_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-      - name: "Packagist API: pkgstore"
+          git_repo: '${{ github.server_url }}/${{ github.repository }}.git'
+          git_user: '${{ secrets.BOT_API_NAME }}'
+          git_email: '${{ secrets.BOT_API_EMAIL }}'
+          git_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+          api_type: 'users'
+          api_owner: 'KitsuneSolar'
+          api_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+      - name: 'Packagist API: pkgstore'
         uses: ghastore/api-packagist@main
         with:
-          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
-          git_user: "${{ secrets.BOT_API_PROXY_NAME }}"
-          git_email: "${{ secrets.BOT_API_PROXY_EMAIL }}"
-          git_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-          api_vendor: "pkgstore"
-          bot_info: "Email: ghabot@bk.ru"
-      - name: "SUSE OBS API: unixstore"
+          git_repo: '${{ github.server_url }}/${{ github.repository }}.git'
+          git_user: '${{ secrets.BOT_API_NAME }}'
+          git_email: '${{ secrets.BOT_API_EMAIL }}'
+          git_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+          api_vendor: 'pkgstore'
+          bot_info: 'Email: ghapibot@bk.ru'
+      - name: 'SUSE OBS API: unixstore'
         uses: ghastore/api-obs@main
         with:
-          git_repo: "${{ github.server_url }}/${{ github.repository }}.git"
-          git_user: "${{ secrets.BOT_API_PROXY_NAME }}"
-          git_email: "${{ secrets.BOT_API_PROXY_EMAIL }}"
-          git_token: "${{ secrets.BOT_API_PROXY_TOKEN }}"
-          api_project: "home:unixstore:debian"
-          api_user: "${{ secrets.OBS_USER }}"
-          api_password: "${{ secrets.OBS_PASSWORD }}"
-          bot_info: "Email: ghabot@bk.ru"
+          git_repo: '${{ github.server_url }}/${{ github.repository }}.git'
+          git_user: '${{ secrets.BOT_API_NAME }}'
+          git_email: '${{ secrets.BOT_API_EMAIL }}'
+          git_token: '${{ secrets.BOT_API_TOKEN_GITHUB }}'
+          api_project: 'home:unixstore:debian'
+          api_user: '${{ secrets.OBS_USER }}'
+          api_password: '${{ secrets.OBS_PASSWORD }}'
+          bot_info: 'Email: ghapibot@bk.ru'
